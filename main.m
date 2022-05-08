@@ -24,8 +24,8 @@ N_draw=100000;
 v_ideal = icd(N_t,K,S_each);
 %%
 %通过交替最优化F_RF和f_BB由v_ideal得到估计S_t_hat,P_t_hat,f_BB_hat
-%[S_t_hat,P_t_hat,f_BB_hat]=crossopti_Ff(v_ideal,N_c,N_RF,b,R_max,T_max);
-%v_p=S_t_hat*P_t_hat*f_BB_hat;
+[S_t_hat,P_t_hat,f_BB_hat]=crossopti_Ff(v_ideal,N_c,N_RF,b,R_max,T_max);
+v_p=S_t_hat*P_t_hat*f_BB_hat;
 %%
 [F_RF_hat_fs,f_BB_hat_fs]=crossopti_Ff_fs(v_ideal,N_RF,b,R_max);
 v_p_fs=F_RF_hat_fs*f_BB_hat_fs;
